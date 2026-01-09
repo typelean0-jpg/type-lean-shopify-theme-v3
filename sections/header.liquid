@@ -1,0 +1,29 @@
+<header class="header sticky">
+  <div class="container flex justify-between items-center">
+    <div class="logo">
+      <img src="{{ section.settings.logo | image_url: width: 120 }}" alt="{{ shop.name }}">
+      <span class="brand-name">{{ section.settings.brand_name }}</span>
+    </div>
+    <nav class="nav hidden-mobile">
+      <ul>
+        <li><a href="/#product">Product</a></li>
+        <li><a href="/#how-it-works">How it Works</a></li>
+        <li><a href="/#compatibility">Compatibility</a></li>
+        <li><a href="/#reviews">Reviews</a></li>
+        <li><a href="/#support">Support</a></li>
+        <li><a href="/#about">About</a></li>
+      </ul>
+    </nav>
+    <a href="/cart" class="cart-icon">🛒</a>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "text", "id": "brand_name", "label": "Brand Name", "default": "Type-Lean" }
+  ]
+}
+{% endschema %}
