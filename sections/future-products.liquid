@@ -1,0 +1,42 @@
+<section class="future-products" id="future-products">
+  <div class="container">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="product-grid">
+      {% if collections.all.products_count > 1 %}
+        {% for product in collections.all.products %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      {% else %}
+        <div class="coming-soon">
+          <h3>New products coming soon.</h3>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Future Products",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Title", "default": "Future Products" }
+  ],
+  "presets": [{ "name": "Future Products" }]
+}
+{% endschema %}
+
+{% stylesheet %}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 2rem;
+}
+.coming-soon {
+  text-align: center;
+  padding: 3rem;
+  border: 1px dashed #ccc;
+  border-radius: var(--radius);
+  color: #666;
+}
+{% endstylesheet %}
