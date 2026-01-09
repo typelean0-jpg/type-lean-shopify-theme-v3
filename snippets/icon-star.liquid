@@ -1,0 +1,18 @@
+{%- comment -%}
+Icon Star Snippet
+Reusable star rating visual. Use anywhere a rating is displayed.
+{%- endcomment -%}
+
+<div class="stars" aria-label="5-star rating">
+  {% for i in (1..5) %}
+    <span class="star">★</span>
+  {% endfor %}
+</div>
+
+{% stylesheet %}
+.stars {
+  color: #f5c518;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+{% endstylesheet %}
