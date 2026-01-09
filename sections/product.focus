@@ -1,0 +1,62 @@
+<section class="product-focus" id="product">
+  <div class="container grid product-focus-grid">
+    <div class="product-focus-media">
+      {% if section.settings.product_image != blank %}
+        <img src="{{ section.settings.product_image | image_url: width: 800 }}" alt="{{ section.settings.product_title }}">
+      {% else %}
+        <img src="{{ 'placeholder.png' | asset_url }}" alt="Product Image">
+      {% endif %}
+    </div>
+
+    <div class="product-focus-content">
+      <h2>{{ section.settings.product_title }}</h2>
+      <p class="desc">{{ section.settings.product_description }}</p>
+      <div class="price">
+        {% if section.settings.dynamic_price %}
+          {{ product.price | money }}
+        {% else %}
+          {{ section.settings.manual_price }}
+        {% endif %}
+      </div>
+      <a href="/products/{{ section.settings.product_handle }}" class="btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Focus",
+  "settings": [
+    { "type": "text", "id": "product_title", "label": "Product Title", "default": "Type-Lean" },
+    { "type": "textarea", "id": "product_description", "label": "Description", "default": "Precision-built stand charging cable for creators." },
+    { "type": "image_picker", "id": "product_image", "label": "Product Image" },
+    { "type": "text", "id": "manual_price", "label": "Manual Price (if not dynamic)" },
+    { "type": "checkbox", "id": "dynamic_price", "label": "Use Shopify Dynamic Product Price", "default": true },
+    { "type": "text", "id": "product_handle", "label": "Product Handle (for link)", "default": "type-lean" }
+  ],
+  "presets": [{ "name": "Product Focus" }]
+}
+{% endschema %}
+
+{% stylesheet %}
+.product-focus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.product-focus-content h2 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+.price {
+  margin: 1rem 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+@media (max-width: 768px) {
+  .product-focus-grid {
+    grid-template-columns: 1fr;
+  }
+}
+{% endstylesheet %}
