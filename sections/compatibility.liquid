@@ -1,0 +1,50 @@
+<section class="compatibility" id="compatibility">
+  <div class="container">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="compatibility-icons">
+      {% for block in section.blocks %}
+        <div class="compatibility-item">
+          <img src="{{ block.settings.icon | image_url: width: 60 }}" alt="">
+          <p>{{ block.settings.label }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Compatibility",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Title", "default": "Compatibility" }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Compatibility Icon",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "label", "label": "Label", "default": "USB-C" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Compatibility" }]
+}
+{% endschema %}
+
+{% stylesheet %}
+.compatibility-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 2rem;
+}
+.compatibility-item {
+  text-align: center;
+}
+.compatibility-item img {
+  width: 50px;
+  margin-bottom: .5rem;
+}
+{% endstylesheet %}
