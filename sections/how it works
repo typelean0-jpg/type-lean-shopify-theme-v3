@@ -1,0 +1,56 @@
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="features-grid">
+      {% for block in section.blocks %}
+        <div class="feature-card">
+          <img src="{{ block.settings.icon | image_url: width: 80 }}" alt="">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Title", "default": "How It Works" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "title", "label": "Feature Title" },
+        { "type": "textarea", "id": "text", "label": "Feature Description" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "How It Works" }]
+}
+{% endschema %}
+
+{% stylesheet %}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin-top: 2rem;
+}
+.feature-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: center;
+}
+.feature-card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+{% endstylesheet %}
