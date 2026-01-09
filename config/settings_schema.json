@@ -1,0 +1,103 @@
+[
+  {
+    "name": "Theme Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand Colors"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#f8f8f8"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent / Button Color",
+        "default": "#111111"
+      },
+
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading Font",
+        "default": "inter_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body Font",
+        "default": "inter_n4"
+      },
+
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "container_width",
+        "label": "Container Width",
+        "options": [
+          { "value": "1200", "label": "Standard (1200px)" },
+          { "value": "1400", "label": "Wide (1400px)" },
+          { "value": "full", "label": "Full Width" }
+        ],
+        "default": "1200"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_shadows",
+        "label": "Enable Shadows",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "rounded_corners",
+        "label": "Rounded Corners",
+        "default": true
+      },
+
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_note",
+        "label": "Footer Note",
+        "default": "© 2026 Type-Lean. All rights reserved."
+      }
+    ]
+  },
+  {
+    "name": "Social Links",
+    "settings": [
+      { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
+      { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+      { "type": "url", "id": "twitter_url", "label": "X / Twitter URL" },
+      { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
+    ]
+  },
+  {
+    "name": "Theme Info",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Type-Lean Theme — minimalist premium Shopify theme built for precision tech brands."
+      }
+    ]
+  }
+]
