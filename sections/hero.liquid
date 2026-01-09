@@ -1,0 +1,40 @@
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>{{ section.settings.heading }}</h1>
+    <p class="subtext">{{ section.settings.subheading }}</p>
+    <div class="cta-buttons">
+      <a href="{{ section.settings.primary_cta_link }}" class="btn-primary">{{ section.settings.primary_cta_text }}</a>
+      <a href="{{ section.settings.secondary_cta_link }}" class="btn-secondary">{{ section.settings.secondary_cta_text }}</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    {% if section.settings.media_type == 'image' %}
+      <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="">
+    {% elsif section.settings.media_type == 'video' %}
+      <video autoplay muted loop>
+        <source src="{{ section.settings.hero_video | file_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Lean. Charge. Create." },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "A 2-in-1 invisible stand charging cable designed for creators who demand form and function." },
+    { "type": "text", "id": "primary_cta_text", "label": "Primary Button Text", "default": "Shop Type-Lean" },
+    { "type": "url", "id": "primary_cta_link", "label": "Primary Button Link" },
+    { "type": "text", "id": "secondary_cta_text", "label": "Secondary Button Text", "default": "Watch the demo" },
+    { "type": "url", "id": "secondary_cta_link", "label": "Secondary Button Link" },
+    { "type": "select", "id": "media_type", "label": "Media Type", "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ], "default": "image"
+    },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
+    { "type": "file", "id": "hero_video", "label": "Hero Video" }
+  ]
+}
+{% endschema %}
