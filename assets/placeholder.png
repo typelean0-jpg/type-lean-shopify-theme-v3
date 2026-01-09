@@ -1,0 +1,1 @@
+<img src="{{ 'placeholder.png' | asset_url | default: 'https://cdn.shopify.com/s/assets/no-image.svg' }}" alt="Placeholder">
