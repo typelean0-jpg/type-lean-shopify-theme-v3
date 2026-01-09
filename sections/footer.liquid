@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="container flex justify-between">
+    <ul class="footer-links">
+      <li><a href="/#product">Product</a></li>
+      <li><a href="/#reviews">Reviews</a></li>
+      <li><a href="/#support">Support</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/policies/terms">Terms</a></li>
+      <li><a href="/policies/privacy">Privacy</a></li>
+    </ul>
+    <p class="copyright">{{ section.settings.copyright }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "copyright", "label": "Copyright Text", "default": "© 2026 Type-Lean. All rights reserved." }
+  ]
+}
+{% endschema %}
