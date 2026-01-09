@@ -1,5 +1,47 @@
-{% section 'product-focus' %}
-{% section 'how-it-works' %}
-{% section 'compatibility' %}
-{% section 'reviews' %}
-{% section 'future-products' %}
+{%- comment -%}
+Type-Lean — Homepage Template
+Online Store 2.0 compatible
+Modular and re-orderable sections for a minimalist, engineered design.
+{%- endcomment -%}
+
+{% layout 'theme' %}
+
+<main id="MainContent">
+
+  {%- comment -%} 
+  HERO SECTION 
+  Large visual impact area with CTA and media support.
+  {%- endcomment -%}
+  {% section 'hero' %}
+
+  {%- comment -%} 
+  PRODUCT FOCUS SECTION 
+  Highlight the current flagship product.
+  {%- endcomment -%}
+  {% section 'product-focus' %}
+
+  {%- comment -%} 
+  HOW IT WORKS SECTION 
+  Displays up to 4 features explaining the product.
+  {%- endcomment -%}
+  {% section 'how-it-works' %}
+
+  {%- comment -%} 
+  COMPATIBILITY SECTION 
+  Icon-based list showing supported devices.
+  {%- endcomment -%}
+  {% section 'compatibility' %}
+
+  {%- comment -%} 
+  REVIEWS SECTION 
+  Testimonials and ratings from customers.
+  {%- endcomment -%}
+  {% section 'reviews' %}
+
+  {%- comment -%} 
+  FUTURE PRODUCTS SECTION 
+  Dynamically displays all products or shows "Coming soon" if only one.
+  {%- endcomment -%}
+  {% section 'future-products' %}
+
+</main>
