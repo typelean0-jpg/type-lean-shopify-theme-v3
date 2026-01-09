@@ -1,0 +1,30 @@
+{%- comment -%}
+Review Card Snippet
+Used in: reviews.liquid
+Displays testimonial text, author, and optional rating stars.
+{%- endcomment -%}
+
+<div class="review-card">
+  {% render 'icon-star' %}
+  <p class="review-text">“{{ review.text | escape }}”</p>
+  <p class="review-author">— {{ review.author | escape }}</p>
+</div>
+
+{% stylesheet %}
+.review-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  text-align: center;
+}
+.review-text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin: 1rem 0;
+}
+.review-author {
+  font-size: 0.9rem;
+  color: #666;
+}
+{% endstylesheet %}
